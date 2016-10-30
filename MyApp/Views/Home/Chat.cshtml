@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@{
+    ViewBag.Title = "Chat";
+}
+<div class="container">
+    <br />
+    <textarea id="shoutbox" style="width: 500px; height: 200px; overflow: auto;" readonly="readonly"></textarea>
+    <br />
+    <input type="text" id="text" style="width: 200px;" />
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+    
+
+        $.connection.hub.start().then(function () {
+            console.log("Connected!:)");
+        });
+        
+    </script>
+
+
+}
